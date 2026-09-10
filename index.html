@@ -8,6 +8,81 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eaf6ff;
+      color: #1f3b4d;
+      margin: 0;
+      padding: 30px;
+    }
+
+    #app {
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 80, 150, 0.15);
+    }
+
+    h1 {
+      color: #1769aa;
+      border-bottom: 2px solid #87ceeb;
+      padding-bottom: 8px;
+      margin-top: 30px;
+    }
+
+    h2 {
+      color: #2185c5;
+    }
+
+    button {
+      background-color: #2185c5;
+      color: white;
+      border: none;
+      padding: 9px 15px;
+      margin: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1769aa;
+    }
+
+    input[type="text"] {
+      padding: 9px;
+      border: 1px solid #87ceeb;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #2185c5;
+      box-shadow: 0 0 4px rgba(33, 133, 197, 0.3);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    ul li[v-for] {
+      cursor: pointer;
+    }
+
+    li p {
+      background-color: #f0f9ff;
+      padding: 10px;
+      border-left: 4px solid #87ceeb;
+      border-radius: 4px;
+    }
+  </style>
+
   <body>
     <div id="app">
       <h1>Información de Perfil</h1>
