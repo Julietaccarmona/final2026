@@ -19,6 +19,13 @@
         Hola, mi nombre es {{ nombre }}, tengo {{ edad }} años y vivo en {{
         ciudad }}.
       </p>
+
+      <h1>Contador Interactivo</h1>
+
+      <p>Contador: {{ contador }}</p>
+
+      <button @click="incrementar">Incrementar</button>
+      <button @click="decrementar">Decrementar</button>
     </div>
 
     <script>
@@ -29,9 +36,27 @@
           nombre: "Raúl Pérez",
           edad: 63,
           ciudad: "Buenos Aires",
+          contador: 0,
+          nuevaTarea: "",
+          tareas: [
+            {
+              id: 1,
+              texto: "Aprender Vue",
+              completada: false,
+            },
+          ],
+        },
+
+        methods: {
+          incrementar() {
+            this.contador += 2;
+          },
+
+          decrementar() {
+            this.contador--;
+          },
         },
       });
     </script>
   </body>
 </html>
-
