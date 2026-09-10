@@ -43,6 +43,26 @@
           {{ tarea.texto }}
         </li>
       </ul>
+
+      <h1>Posts</h1>
+
+      <ul>
+        <li
+          v-for="post in posts"
+          :key="post.id"
+          @click="obtenerComments(post.id)"
+        >
+          {{ post.title }}
+        </li>
+      </ul>
+      <h2>Comentarios</h2>
+
+      <ul>
+        <li v-for="comentario in comentarios" :key="comentario.id">
+          <strong>{{ comentario.name }}</strong>
+          <p>{{ comentario.body }}</p>
+        </li>
+      </ul>
     </div>
 
     <script>
@@ -61,6 +81,8 @@
           contador: 0,
 
           nuevaTarea: "",
+          posts: [],
+          comentarios: [],
 
           tareas: [
             {
@@ -99,7 +121,7 @@
 
           async obtenerComments(postId) {
             const respuesta = await api.get(`/posts/${postId}/comments`);
-            return respuesta.data;
+            this.comentarios = respuesta.data;
           },
         },
 
@@ -111,6 +133,14 @@
           totalTareas() {
             return this.tareas.length;
           },
+        },
+
+        mounted() {
+          for (let i = 1; i <= 10; i++) {
+            this.obtenerPost(i).then((post) => {
+              this.posts.push(post);
+            });
+          }
         },
       });
     </script>
