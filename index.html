@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Información de Perfil Simple</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>Información de Perfil</h1>
+
+      <p>Nombre: {{ nombre }}</p>
+      <p>Edad: {{ edad }}</p>
+      <p>Ciudad: {{ ciudad }}</p>
+
+      <p>
+        Hola, mi nombre es {{ nombre }}, tengo {{ edad }} años y vivo en {{
+        ciudad }}.
+      </p>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+
+        data: {
+          nombre: "Raúl Pérez",
+          edad: 63,
+          ciudad: "Buenos Aires",
+        },
+      });
+    </script>
+  </body>
+</html>
+
